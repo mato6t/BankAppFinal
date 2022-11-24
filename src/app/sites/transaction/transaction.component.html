@@ -1,0 +1,84 @@
+<div  class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="iban">Iban:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="iban" type="text" value="{{transaction.iban}}" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="amount">Amount:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="amount" type="text" value="{{transaction.amount}}"disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="cardNumber">Card number:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="cardNumber" type="text" value="{{cardNumber}}" [(ngModel)]="cardNumber" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="category">Category:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="category" type="text" value="{{(Category[transaction.category])}}" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="typeoftrans">Type of transaction:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="typeoftrans" type="text" value="{{transaction.isDebet ? 'Debet' : 'Credit'}}" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="date">Date:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="date" type="text" value="{{transaction.date | date : 'short'}}" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="owner">Owner:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="owner" type="text" value="{{transaction.owner}}" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="id">Id:</label>
+                </div>
+                <div class="col-md-8">
+                    <input name="id" type="text" value="{{transaction.id}}" disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

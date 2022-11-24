@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <div class="col text-center" style="font-weight: bold;">
+        <label for="sum">Account state: </label>
+        <input type="text" name="sum" [value]="' ' + transactionSum + ' €'" disabled>
+      </div>
+    </div>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Owner</th>
+			<th scope="col">Amount</th>
+			<th scope="col">Category</th>
+			<th scope="col">Direction</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr [ngClass]="{'red' : transaction.isDebet, 'green' : !transaction.isDebet}" *ngFor="let transaction of transactions; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+			<td>
+				<a href="transactions/{{transaction.id}}">{{ transaction.owner }}</a>
+			</td>
+			<td>{{ transaction.amount| number }}</td>
+			<td>{{(Category[transaction.category])}}</td>
+			<td>{{ transaction.isDebet ? "Debet" : "Credit" }}</td>
+		</tr>
+	</tbody>
+</table>

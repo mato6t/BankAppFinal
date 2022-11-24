@@ -1,0 +1,85 @@
+<div class="container" style="color: red;">
+    <div class="row">
+        <div class="col text-center">
+            <p *ngFor="let e of errorList">{{e}}</p>
+        </div>
+    </div>
+</div>
+
+
+<form #thisForm="ngForm" (ngSubmit)="submit()"  class="container">
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="iban">Iban:</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="w-100" name="iban" type="text" value="{{newTransaction.iban}}"  required minlength="12" [(ngModel)]="newTransaction.iban"  #name="ngModel" minlength="12" [maxLength]="12" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="amount">Amount:</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="w-100" name="amount" type="number" value="{{newTransaction.amount}}" [(ngModel)]="newTransaction.amount" [min]="1" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="owner">Owner:</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="w-100" name="owner" type="text" value="{{newTransaction.owner}}" [(ngModel)]="newTransaction.owner" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-2">
+                <div class="col-md-4">
+                    <label for="name">Category:</label>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="radio" id="grocerries" name="category" value="2" [(ngModel)]="newTransaction.category" [checked]="true">
+                            <label class="ml-2" for="grocerries">Grocerries</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="radio" id="technologies" name="category" value="3" [(ngModel)]="newTransaction.category">
+                            <label for="technologies">Technologies</label>
+                        </div>
+                            <div class="col-md-3">
+                            <input type="radio" id="investment" name="category" value="4" [(ngModel)]="newTransaction.category">
+                            <label for="investment">Investment</label>
+                        </div>
+                            <div class="col-md-3">
+                            <input type="radio" id="bills" name="category" value="5" [(ngModel)]="newTransaction.category">
+                            <label for="bills">Bills</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <input type="submit" name="edit" value="Send" class="btn btn-primary">
+          </div>
+        </div>
+    </div>
+    
+</form>

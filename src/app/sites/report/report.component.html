@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <button (click)="showReportChartClicked()" class="btn btn-primary">Show spending chart</button>
+      </div>
+    </div>
+</div>
+<div *ngIf="showReportChart" class="container-md w-50">
+    <apx-chart [series]="series" [labels]="labels" [colors]="['#00D700', '#FF0000']"  [fill]="{'colors': ['#00D700', '#FF0000']}" [chart]="chart" [title]="title"></apx-chart>
+</div>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <button (click)="showSpendingChartClicked()" class="btn btn-primary">Show spending chart</button>
+      </div>
+    </div>
+</div>
+<div *ngIf="showSpendingChart" class="container-md w-50">
+    <apx-chart [series]="seriesSpending" [labels]="labelsSpending" [chart]="chartSpending" [title]="titleSpending"></apx-chart>
+</div>

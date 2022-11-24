@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <img src="/assets/images/Crash.jpg" alt="" style="width: 200px; height:200px;">
+      </div>
+    </div>
+</div>
+<form #thisForm="ngForm" (ngSubmit)="clickedEdit()" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="name">Name:</label>
+                </div>
+                <div class="col">
+                    <input name="name" type="text" value="{{profil.name}}" [(ngModel)]="profil.name" [disabled]="!isEditMode">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="surname">Surname:</label>
+                </div>
+                <div class="col">
+                    <input name="surname" type="text" value="{{profil.surname}}" [(ngModel)]="profil.surname" [disabled]="!isEditMode">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="title">Title:</label>
+                </div>
+                <div class="col">
+                    <input name="title" type="text" value="{{profil.titleBeforeName}}" [(ngModel)]="profil.titleBeforeName" [disabled]="!isEditMode">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="titleAfter">Title after name:</label>
+                </div>
+                <div class="col">
+                    <input name="titleAfter" type="text" value="{{profil.titleAfterName}}" [(ngModel)]="profil.titleAfterName" [disabled]="!isEditMode">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="address">Address:</label>
+                </div>
+                <div class="col">
+                    <input name="address" type="text" value="{{profil.address}}" [(ngModel)]="profil.address" [disabled]="!isEditMode">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row mb-2">
+                <div class="col">
+                    <label for="corAddress">Corespond. Address:</label>
+                </div>
+                <div class="col">
+                    <input name="corAddress" type="text" value="{{profil.correspondanceAddress}}" [(ngModel)]="profil.correspondanceAddress" [disabled]="!isEditMode">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <input type="submit" name="edit" [value]="isEditMode ? 'Save' : 'Edit'" class="btn btn-primary">
+          </div>
+        </div>
+    </div>
+</form>

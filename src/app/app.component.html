@@ -1,0 +1,22 @@
+<nav>
+  <ul ngbNav [(activeId)]="active" class="nav-pills" orientation="{{isVertical ? 'vertical': 'horizontal'}}">
+    <li ngbNavItem="profil" >
+      <a ngbNavLink routerLink="/profil">Profil</a>
+      <ng-template ngbNavContent>...</ng-template>
+    </li>
+    <li ngbNavItem="transactions">
+      <a ngbNavLink routerLink="/transactions">Transactions</a>
+      <ng-template ngbNavContent>...</ng-template>
+    </li>
+    <li ngbNavItem="report">
+      <a ngbNavLink routerLink="/report">Report</a>
+      <ng-template ngbNavContent>...</ng-template>
+    </li>
+    <li ngbNavItem="money-send">
+      <a ngbNavLink routerLink="/money-send">Money send</a>
+      <ng-template ngbNavContent>...</ng-template>
+    </li>
+  </ul>
+</nav>
+<br>
+<router-outlet></router-outlet>
